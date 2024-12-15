@@ -1,7 +1,7 @@
 # Getting Started
 open a terminal in the current working directory and run
 ``` bash
-docker-compose --env-file config.env up -d --build
+docker compose --env-file config.env up -d --build
 ```
 when done run
 ``` bash
