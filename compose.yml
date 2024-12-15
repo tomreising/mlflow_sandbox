@@ -54,7 +54,7 @@ services:
     image: mlflow_server
     container_name: mlflow_server
     volumes:
-      - ./mlflow:/mlflow
+      - ./mlflow:/mlruns
       #NOTE that the above volume would be removed if using postgres
     # depends_on:
     #   - db
@@ -70,7 +70,7 @@ services:
       - MLFLOW_S3_IGNORE_TLS=true
     command: >
       mlflow server
-      --backend-store-uri sqlite:///mlflow.db
+      --backend-store-uri sqlite:////mlruns/mflow.db
       --host 0.0.0.0
       --serve-artifacts
       --artifacts-destination s3://${MLFLOW_BUCKET_NAME}
